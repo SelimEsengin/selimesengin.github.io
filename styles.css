@@ -1,133 +1,15 @@
-/* Set default styles for body */
-body {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  margin: 0;
-}
-
-/* Set default styles for headings */
-h1, h2 {
-  font-weight: normal;
-  margin: 0;
-}
-
-/* Set styles for navigation bar */
-nav {
-  background-color: #333;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 20px;
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav li {
-  margin-right: 20px;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-}
-
-/* Set styles for sections */
-section {
-  padding: 50px;
-}
-
-/* Set styles for Home section */
-#home {
-  background-color: #f5f5f5;
+#box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 20px;
+  font-size: 36px;
   text-align: center;
-}
-
-#home h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-#home p {
-  font-size: 1.5rem;
-}
-
-/* Set styles for About section */
-#about {
-  background-color: #fff;
-}
-
-#about h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-#about p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-}
-
-/* Set styles for Portfolio section */
-#portfolio {
-  background-color: #f5f5f5;
-}
-
-#portfolio h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-#portfolio ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-#portfolio li {
-  margin-bottom: 10px;
-}
-
-#portfolio a {
-  color: #333;
-  text-decoration: none;
-}
-
-/* Set styles for Contact section */
-#contact {
-  background-color: #fff;
-}
-
-#contact h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-#contact p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-}
-
-#contact a {
-  color: #333;
-  text-decoration: none;
-}
-
-/* Set styles for Trello section */
-#trello {
-  background-color: #f5f5f5;
-}
-
-#trello h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-#trello p {
-  font-size: 1.2rem;
-  line-height: 1.8;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }

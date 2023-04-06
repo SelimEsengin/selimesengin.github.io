@@ -1,55 +1,73 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Portfolio</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Selim Esengin</title>
+    <<style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+      }
+      #bg-image {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+      }
+      #box {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 20px;
+        font-size: 36px;
+        text-align: center;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      #linkedin-button {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+      }
+    </style>
   </head>
   <body>
-    <!-- Navigation bar -->
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#trello">Trello Board</a></li>
-      </ul>
-    </nav>
+    <img id="bg-image" src="" alt="Background Image" />
+    <div id="box">Selim Esengin</div>
+    <a href="https://www.linkedin.com/in/selim-esengin/" target="_blank" id="linkedin-button">
+      <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" alt="LinkedIn logo" width="30" height="30">
+    </a>
+    <script>
+      // Unsplash API endpoint to search for landscape photos
+      const unsplashAPI = "https://api.unsplash.com/search/photos";
+      // Unsplash API access key
+      const accessKey = "jrM7JVM0LWgRzn1ctqJcIFoftfA2tiuc1BJplYVSCAk";
 
-    <!-- Home section -->
-    <section id="home">
-      <h1>Welcome to my Portfolio</h1>
-      <p>Here you can find my latest projects and skills</p>
-    </section>
+      // Function to set the background image
+      function setBackgroundImage() {
+        const bgImage = document.querySelector("#bg-image");
+        fetch(`${unsplashAPI}?query=wallpaper&orientation=landscape&client_id=${accessKey}&per_page=1&content_filter=high`)
+          .then((response) => response.json())
+          .then((data) => {
+            bgImage.src = data.results[0].urls.full;
+          });
+      }
 
-    <!-- About section -->
-    <section id="about">
-      <h2>About Me</h2>
-      <p>My name is Selim Esengin and I am a web student developer based in Rotterdam City.</p>
-    </section>
+      // Set the initial background image
+      setBackgroundImage();
 
-    <!-- Portfolio section -->
-    <section id="portfolio">
-      <h2>My Portfolio</h2>
-      <ul>
-        <li><a href="https://example.com/project1">Project 1</a></li>
-        <li><a href="https://example.com/project2">Project 2</a></li>
-        <li><a href="https://example.com/project3">Project 3</a></li>
-      </ul>
-    </section>
-
-    <!-- Contact section -->
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <p>You can reach me at <a href="mailto:john@example.com">john@example.com</a></p>
-    </section>
-
-    <!-- Trello section -->
-    <section id="trello">
-      <h2>Trello Board</h2>
-      <p>Here is my Trello board for project management:</p>
-      <iframe src="https://trello.com/b/6I3vEKgx.html" width="800" height="600" frameborder="0"></iframe>
-    </section>
-
+      // Refresh the background image every 10 minutes
+      setInterval(() => {
+        setBackgroundImage();
+      }, 600000);
+    </script>
   </body>
 </html>
